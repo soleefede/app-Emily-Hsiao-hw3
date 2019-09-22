@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+div{
+  background-color: #F6E3CE;
+  width: 500px;
+  border: 3px solid blue;
+  border-radius: 10px;
+  padding: 50px 50px 50px 30px;
+  margin: 100px auto auto auto;
+  display: block;
+
+}
+span{
+  color:blue;
+  padding: 0px 20px 0px 20px; 
+  width: 50%;
+  display: inline-block;
+  text-align: right; 
+  margin: 10px 0px 10px 0px;
+}
+.register{
+  background-color: blue;
+  width: 30%;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  margin: 20px auto 0px auto;
+  cursor: pointer;
+}
+
+input{
+  width:150px;
+}
+#Note{
+  height: 50px;
+  margin-top:10px
+}
+#message{
+  display: block;
+  text-align: center;
+  margin:auto;
+  width: 80%;
+}
+
+</style>
+</head>
+<body>
+
+<div>
+  <span>First Name</span>
+  <input type="text" id="First Name" placeholder="First Name">
+  <br/>
+  <span>Last Name</span>
+  <input type="text" id="Last Name" placeholder="Last Name">
+  <br/>
+  <span>Email Address</span>
+  <input type="text" id="Email" placeholder="Email Address">
+  <br/>
+  <span>Note</span>
+  <input type="text" id="Note">
+  <br/>
+  <span onclick="submit()" class="register">Register</span>
+  <br/>
+  <span id="message"></span>
+</div>
+
+</body>
+
+<script>   
+  function submit(){
+    var datalist = document.getElementsByTagName("input");
+    for (var i = 0; i < datalist.length; i++){
+      if (datalist[i].value === ""){
+        document.getElementById('message').innerHTML= datalist[i].id+" cannot be empty.";
+        document.getElementById('message').style.color = "red";
+        break;
+      }else{
+        document.getElementById('message').innerHTML= "Validation successful.";
+        document.getElementById('message').style.color = "green";
+      }
+    }
+  }
+</script>
+
+</html>
