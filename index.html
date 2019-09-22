@@ -37,9 +37,10 @@ span{
 input{
   width:150px;
 }
-#Note{
+textarea{
   height: 50px;
-  margin-top:10px
+  width:150px;
+  border: 1px solid #E0E0E0;
 }
 #message{
   display: block;
@@ -54,16 +55,16 @@ input{
 
 <div>
   <span>First Name</span>
-  <input type="text" id="First Name" placeholder="First Name">
+  <input type="text" id="First Name" placeholder="First Name" class="form">
   <br/>
   <span>Last Name</span>
-  <input type="text" id="Last Name" placeholder="Last Name">
+  <input type="text" id="Last Name" placeholder="Last Name" class="form">
   <br/>
   <span>Email Address</span>
-  <input type="text" id="Email" placeholder="Email Address">
+  <input type="text" id="Email" placeholder="Email Address" class="form">
   <br/>
   <span>Note</span>
-  <input type="text" id="Note">
+  <textarea id="Note" class="form"></textarea>
   <br/>
   <span onclick="submit()" class="register">Register</span>
   <br/>
@@ -74,7 +75,7 @@ input{
 
 <script>   
   function submit(){
-    var datalist = document.getElementsByTagName("input");
+    var datalist = document.getElementsByClassName("form");
     for (var i = 0; i < datalist.length; i++){
       if (datalist[i].value === ""){
         document.getElementById('message').innerHTML= datalist[i].id+" cannot be empty.";
